@@ -74,7 +74,7 @@ const blogPosts = [
     image: BookOpen,
   },
   {
-    title: 'CFO's Guide to Travel & Expense ROI Metrics',
+    title: 'CFO Guide to Travel & Expense ROI Metrics',
     category: 'Finance',
     readTime: '9 min read',
     date: 'December 10, 2023',
