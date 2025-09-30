@@ -1,0 +1,136 @@
+{
+  "colors": [
+    "rgb(0, 0, 0)",
+    "rgb(198, 198, 210)",
+    "rgb(255, 255, 255)",
+    "rgb(99, 7, 248)",
+    "rgba(255, 255, 255, 0.867)",
+    "rgb(6, 0, 0)",
+    "rgb(21, 0, 44)",
+    "rgb(240, 240, 255)",
+    "rgb(226, 226, 233) rgb(198, 198, 210) rgb(198, 198, 210)",
+    "rgb(232, 232, 252)",
+    "rgb(10, 2, 20)",
+    "rgb(112, 112, 143)",
+    "rgb(225, 226, 254)",
+    "rgb(167, 107, 204)",
+    "rgb(169, 169, 188)",
+    "rgb(248, 248, 253)",
+    "rgb(7, 7, 44)",
+    "rgb(241, 241, 249)",
+    "rgb(255, 244, 238)",
+    "rgb(90, 90, 114)",
+    "rgb(218, 158, 255)",
+    "rgba(255, 255, 255, 0.05)",
+    "rgb(21, 21, 65)",
+    "rgb(141, 141, 165)",
+    "rgba(0, 0, 0, 0.5)",
+    "rgb(0, 0, 0) rgb(0, 0, 0) rgb(233, 233, 233)",
+    "rgb(85, 85, 85)",
+    "rgb(249, 255, 250)",
+    "rgb(50, 174, 136)",
+    "rgb(115, 0, 205)",
+    "rgb(216, 216, 216)",
+    "rgb(39, 69, 92)",
+    "rgb(56, 96, 190)",
+    "rgb(233, 233, 233)",
+    "rgb(0, 0, 0) rgb(216, 216, 216) rgb(216, 216, 216)",
+    "rgb(205, 220, 242)",
+    "rgb(216, 216, 216) rgb(0, 0, 0) rgb(0, 0, 0)",
+    "rgb(242, 241, 241)",
+    "rgb(221, 221, 221)",
+    "rgb(105, 105, 105)",
+    "rgb(209, 209, 209)",
+    "rgb(187, 187, 187)",
+    "rgb(244, 244, 244)",
+    "rgb(101, 101, 101)"
+  ],
+  "typography": [
+    {
+      "tag": "h1",
+      "fontFamily": "Sanomat",
+      "fontSize": "45px",
+      "fontWeight": "600",
+      "lineHeight": "54px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "h2",
+      "fontFamily": "Sanomat, ui-serif",
+      "fontSize": "42px",
+      "fontWeight": "600",
+      "lineHeight": "47px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "h3",
+      "fontFamily": "Sanomat, ui-serif",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "lineHeight": "54px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "h4",
+      "fontFamily": "\"Neue Hass Grotesk Text\", ui-sans-serif, system-ui",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "21px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "h5",
+      "fontFamily": "\"Neue Hass Grotesk Text\", ui-sans-serif, system-ui",
+      "fontSize": "13.008px",
+      "fontWeight": "700",
+      "lineHeight": "20px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "p",
+      "fontFamily": "\"Neue Haas Grotesk Display Pro\", \"Neue Hass Grotesk Display\", ui-sans-serif, system-ui",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "lineHeight": "28px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "a",
+      "fontFamily": "\"Neue Hass Grotesk Text\", ui-sans-serif, system-ui",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "32px",
+      "letterSpacing": "normal"
+    },
+    {
+      "tag": "button",
+      "fontFamily": "\"Neue Hass Grotesk Text\", ui-sans-serif, system-ui",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "lineHeight": "25px",
+      "letterSpacing": "normal"
+    }
+  ],
+  "spacing": [
+    {
+      "padding": "0px",
+      "margin": "0px"
+    },
+    {
+      "padding": "0px",
+      "margin": "0px"
+    },
+    {
+      "padding": "16px 0px 24px",
+      "margin": "0px"
+    },
+    {
+      "padding": "140px 0px 0px",
+      "margin": "0px"
+    },
+    {
+      "padding": "0px",
+      "margin": "0px"
+    }
+  ]
+}
