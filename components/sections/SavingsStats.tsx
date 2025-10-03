@@ -2,25 +2,29 @@
 
 import { Container } from '@/components/ui/Container'
 import { FadeIn } from '@/components/ui/FadeIn'
+import Image from 'next/image'
 
 const savings = [
   {
     number: '1',
-    title: 'Negotiate better rates',
-    description: 'Access exclusive corporate rates and save up to 30% on travel bookings through our global supplier network.',
-    stat: '30% average savings',
+    title: 'Access wholesale pricing',
+    description: 'We purchase unsold inventory in bulk and pass the savings to you. Get the private rates public booking sites can\'t show.',
+    stat: 'About 50% savings',
+    image: '/images/Background-HotelsOnBeach.png',
   },
   {
     number: '2',
-    title: 'Eliminate manual work',
-    description: 'Automate expense reports, receipt matching, and approval workflows to save 5+ hours per employee per month.',
-    stat: '5 hours saved/employee',
+    title: 'No timeshare presentations',
+    description: 'Other discount travel clubs force you to sit through high-pressure sales pitches. We don\'t. Just search, book, and save.',
+    stat: 'Zero presentations',
+    image: '/images/Background-Cruise.png',
   },
   {
     number: '3',
-    title: 'Increase policy compliance',
-    description: 'Built-in policy controls and real-time spend visibility drive 95%+ policy compliance across your organization.',
-    stat: '95%+ compliance rate',
+    title: 'Price match guarantee',
+    description: 'Find a lower price within 24 hours of booking? We\'ll refund the difference plus give you a $50 credit.',
+    stat: 'Protected pricing',
+    image: '/images/Background-Condo.png',
   },
 ]
 
@@ -31,11 +35,10 @@ export function SavingsStats() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-              Sky-high company savings
+              How members save
             </h2>
             <p className="text-body-lg text-text-secondary">
-              See how Navan helps companies reduce costs and improve efficiency
-              across travel and expense management.
+              See how Vayo Vault delivers wholesale pricing without the pressure of timeshare presentations.
             </p>
           </div>
         </FadeIn>
@@ -72,16 +75,25 @@ export function SavingsStats() {
 
                 {/* Right: Visual */}
                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="rounded-3xl bg-white border border-gray-200 shadow-xl aspect-[4/3] flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span className="text-[32px] font-display font-bold text-primary">
-                          {item.number}
-                        </span>
+                  <div className="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-primary-dark/30 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="flex items-center gap-3 text-white">
+                        <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                          <span className="text-[20px] font-display font-bold">
+                            {item.number}
+                          </span>
+                        </div>
+                        <p className="text-[18px] leading-[26px] font-semibold">
+                          {item.stat}
+                        </p>
                       </div>
-                      <p className="text-body-md text-text-secondary">
-                        Savings Dashboard
-                      </p>
                     </div>
                   </div>
                 </div>

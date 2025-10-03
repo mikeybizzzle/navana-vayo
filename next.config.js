@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.navan.com'],
+    domains: ['images.unsplash.com'],
     formats: ['image/webp', 'image/avif'],
   },
   reactStrictMode: true,

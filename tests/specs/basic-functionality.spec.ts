@@ -7,7 +7,7 @@ test.describe('Basic Functionality Tests', () => {
   });
 
   test('Page loads successfully', async ({ page }) => {
-    await expect(page).toHaveTitle(/Navan/);
+    await expect(page).toHaveTitle(/Vayo/);
   });
 
   test('Hero section displays correctly', async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe('Basic Functionality Tests', () => {
     const header = page.locator('header');
     await expect(header).toBeVisible();
 
-    const logo = page.getByText('Navan').first();
+    const logo = page.getByText('Vayo').first();
     await expect(logo).toBeVisible();
   });
 

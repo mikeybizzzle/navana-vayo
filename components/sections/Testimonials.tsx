@@ -8,24 +8,24 @@ import { Quote } from 'lucide-react'
 const testimonials = [
   {
     quote:
-      'Navan has completely transformed how we manage travel and expenses. The time savings alone are incredible.',
-    author: 'Sarah Johnson',
-    role: 'VP of Finance',
-    company: 'Tech Corp',
+      'We saved $650 on our Cancun resort booking. Same property, same dates, half the price. Vayo Vault paid for itself on day one.',
+    author: 'Jennifer M.',
+    role: 'Family Vacation',
+    company: 'March 2024',
   },
   {
     quote:
-      'Our employees love the mobile app. Booking travel and submitting expenses has never been easier.',
-    author: 'Michael Chen',
-    role: 'CFO',
-    company: 'Global Industries',
+      'I\'ve booked three cruises through Vayo Vault and saved over $2,000 total. The price match guarantee gives me complete confidence.',
+    author: 'Robert T.',
+    role: 'Cruise Enthusiast',
+    company: 'Multiple Bookings',
   },
   {
     quote:
-      "The analytics and reporting give us unprecedented visibility into our spending. It's a game changer.",
-    author: 'Emily Rodriguez',
-    role: 'Travel Manager',
-    company: 'Innovation Labs',
+      'No timeshare pitch, no presentations—just straightforward deals. Perfect for my last-minute business travel.',
+    author: 'David K.',
+    role: 'Business Owner',
+    company: 'Regular Traveler',
   },
 ]
 
@@ -37,11 +37,11 @@ export function Testimonials() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-              Loved by teams everywhere
+              Real members. Real savings.
             </h2>
             <p className="text-body-lg text-text-secondary">
-              See what our customers have to say about their experience with
-              Navan.
+              See what our members have to say about their experience with
+              Vayo Vault.
             </p>
           </div>
         </FadeIn>

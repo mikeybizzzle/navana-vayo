@@ -16,112 +16,113 @@ import {
   ArrowRight,
   Tag,
 } from 'lucide-react'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Resources & Insights | Navan',
-  description: 'Guides, reports, and best practices for modern travel and expense management.',
+  title: 'Travel Guides | Vayo Vault',
+  description: 'Expert travel tips, destination guides, and money-saving strategies for savvy travelers.',
 }
 
 const featuredPost = {
-  title: '2024 Business Travel Trends Report',
-  category: 'Research',
-  readTime: '12 min read',
+  title: '2024 Vacation Savings Report: How Members Save 50%',
+  category: 'Member Insights',
+  readTime: '10 min read',
   date: 'January 15, 2024',
-  excerpt: 'Our comprehensive analysis of business travel trends, including booking patterns, cost optimization strategies, and the future of corporate travel.',
-  image: FileText,
+  excerpt: 'Our comprehensive analysis of member savings patterns, popular destinations, and strategies to maximize vacation value with wholesale pricing.',
+  imageSrc: '/images/Background-Beach.png',
   featured: true,
 }
 
 const blogPosts = [
   {
-    title: '10 Ways to Reduce Business Travel Costs Without Sacrificing Quality',
-    category: 'Best Practices',
+    title: '10 Caribbean Resorts with the Best Member-Only Rates',
+    category: 'Destinations',
     readTime: '8 min read',
     date: 'January 10, 2024',
-    excerpt: 'Practical strategies for cutting travel expenses while maintaining employee satisfaction and productivity.',
-    image: TrendingUp,
+    excerpt: 'Discover which all-inclusive Caribbean properties offer the deepest discounts through Vayo Vault\'s wholesale inventory.',
+    imageSrc: '/images/Mexico.png',
   },
   {
-    title: 'The Complete Guide to Expense Policy Automation',
+    title: 'The Complete Guide to Booking Cruises at Wholesale Prices',
     category: 'Guides',
-    readTime: '15 min read',
+    readTime: '12 min read',
     date: 'January 5, 2024',
-    excerpt: 'Everything you need to know about implementing automated expense policies that save time and reduce errors.',
-    image: BookOpen,
+    excerpt: 'Everything you need to know about cruise inventory, cabin categories, and how to save 40-50% on your next voyage.',
+    imageSrc: '/images/Cruiseship.png',
   },
   {
-    title: 'How AI is Transforming Expense Management',
-    category: 'Technology',
-    readTime: '6 min read',
-    date: 'December 28, 2023',
-    excerpt: 'Explore how artificial intelligence is revolutionizing the way companies handle expenses, from receipt capture to fraud detection.',
-    image: TrendingUp,
-  },
-  {
-    title: 'Corporate Travel Policy Template: A Complete Framework',
-    category: 'Templates',
-    readTime: '10 min read',
-    date: 'December 20, 2023',
-    excerpt: 'Download our free, customizable travel policy template designed for modern companies.',
-    image: FileText,
-  },
-  {
-    title: 'Remote Work and Business Travel: Finding the Balance',
-    category: 'Insights',
-    readTime: '7 min read',
-    date: 'December 15, 2023',
-    excerpt: 'As hybrid work becomes the norm, discover how companies are rethinking their approach to business travel.',
-    image: BookOpen,
-  },
-  {
-    title: 'CFO Guide to Travel & Expense ROI Metrics',
-    category: 'Finance',
+    title: 'Hawaii on a Budget: Multi-Island Packages That Save',
+    category: 'Destinations',
     readTime: '9 min read',
+    date: 'December 28, 2023',
+    excerpt: 'Plan the perfect Hawaiian vacation with insider tips on inter-island travel and hotel packages at member rates.',
+    imageSrc: '/images/Background-HotelsOnBeach.png',
+  },
+  {
+    title: 'Off-Season Travel: When to Book for Maximum Savings',
+    category: 'Money-Saving Tips',
+    readTime: '7 min read',
+    date: 'December 20, 2023',
+    excerpt: 'Learn which destinations offer the best deals during shoulder season and how to avoid crowds while saving money.',
+    imageSrc: '/images/Florida.png',
+  },
+  {
+    title: 'All-Inclusive vs A La Carte: Which Saves More?',
+    category: 'Travel Tips',
+    readTime: '6 min read',
+    date: 'December 15, 2023',
+    excerpt: 'Break down the math on all-inclusive resorts versus a la carte pricing to determine the best value for your family.',
+    imageSrc: '/images/Resort.png',
+  },
+  {
+    title: 'European Hotel Chains with the Best Wholesale Rates',
+    category: 'Destinations',
+    readTime: '10 min read',
     date: 'December 10, 2023',
-    excerpt: 'Key metrics every CFO should track to measure and improve travel and expense program performance.',
-    image: TrendingUp,
+    excerpt: 'Which European hotel brands offer the deepest discounts, and where to find them in major cities.',
+    imageSrc: '/images/France.png',
   },
 ]
 
 const resources = [
   {
     icon: FileText,
-    title: 'Travel Policy Template',
-    description: 'Comprehensive template for building your company travel policy',
+    title: 'Vacation Planning Checklist',
+    description: 'Complete checklist for booking and planning your trip',
     type: 'Download',
     link: '#',
   },
   {
     icon: Video,
-    title: 'Product Demo Videos',
-    description: 'Watch quick demos of key Navan features',
+    title: 'Platform Walkthrough Videos',
+    description: 'Watch quick demos of how to search and book deals',
     type: 'Video Library',
     link: '#',
   },
   {
     icon: BookOpen,
-    title: 'Implementation Guide',
-    description: 'Step-by-step guide to rolling out Navan in your organization',
-    type: 'Guide',
+    title: 'Destination Guides',
+    description: 'In-depth guides for popular vacation destinations',
+    type: 'Guide Library',
     link: '#',
   },
   {
     icon: Download,
-    title: 'ROI Calculator',
-    description: 'Calculate potential savings with Navan',
+    title: 'Savings Calculator',
+    description: 'See how much you could save on your next trip',
     type: 'Tool',
     link: '#',
   },
 ]
 
 const categories = [
-  'All Posts',
-  'Best Practices',
-  'Guides',
-  'Research',
-  'Technology',
-  'Finance',
-  'Templates',
+  'All Guides',
+  'Destinations',
+  'Money-Saving Tips',
+  'Travel Tips',
+  'Member Insights',
+  'Cruise Guides',
+  'Resort Reviews',
 ]
 
 export default function ResourcesPage() {
@@ -130,8 +131,8 @@ export default function ResourcesPage() {
       <Header />
       <main>
         <PageHero
-          title="Resources & Insights"
-          description="Expert guidance, research, and tools to help you optimize your travel and expense programs."
+          title="Travel Guides & Tips"
+          description="Expert destination guides, money-saving strategies, and insider tips to help you travel more for less."
           background="default"
         />
 
@@ -141,12 +142,16 @@ export default function ResourcesPage() {
             <FadeIn>
               <Card padding="none" className="overflow-hidden border-2 border-primary">
                 <div className="grid lg:grid-cols-2">
-                  <div className="p-8 lg:p-12 flex items-center justify-center bg-primary/5">
-                    <div className="text-center">
-                      <div className="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                        <featuredPost.image className="w-12 h-12 text-primary" />
-                      </div>
-                      <div className="px-4 py-2 rounded-full bg-primary text-white text-body-sm font-semibold inline-block">
+                  <div className="relative h-80 lg:h-auto">
+                    <Image
+                      src={featuredPost.imageSrc}
+                      alt={featuredPost.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="px-4 py-2 rounded-full bg-white text-primary text-body-sm font-semibold">
                         Featured Report
                       </div>
                     </div>
@@ -211,10 +216,14 @@ export default function ResourcesPage() {
               {blogPosts.map((post, index) => (
                 <FadeIn key={post.title} delay={index * 0.1}>
                   <Card padding="none" className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="p-6 bg-primary/5 flex items-center justify-center h-48">
-                      <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <post.image className="w-8 h-8 text-primary" />
-                      </div>
+                    <div className="relative h-48">
+                      <Image
+                        src={post.imageSrc}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     </div>
                     <div className="p-6 flex-grow flex flex-col">
                       <div className="flex items-center gap-3 mb-3">
@@ -258,10 +267,10 @@ export default function ResourcesPage() {
             <FadeIn>
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-                  Popular Resources
+                  Helpful Resources
                 </h2>
                 <p className="text-body-lg text-text-secondary">
-                  Templates, guides, and tools to help you get the most from your travel and expense program.
+                  Checklists, guides, and tools to help you plan and book the perfect vacation.
                 </p>
               </div>
             </FadeIn>
@@ -303,10 +312,10 @@ export default function ResourcesPage() {
               <Card variant="purple" padding="lg" className="text-center max-w-3xl mx-auto">
                 <BookOpen className="w-16 h-16 text-primary mx-auto mb-6" />
                 <h2 className="text-display-md font-display font-semibold text-primary-dark mb-4">
-                  Stay Updated
+                  Get Travel Tips & Deals
                 </h2>
                 <p className="text-body-lg text-text-secondary mb-8">
-                  Get the latest insights, tips, and resources delivered to your inbox monthly.
+                  Get exclusive deals, destination guides, and money-saving tips delivered to your inbox.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                   <input

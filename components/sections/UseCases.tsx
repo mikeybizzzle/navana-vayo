@@ -1,32 +1,32 @@
 import { Container } from '@/components/ui/Container'
 import { Card } from '@/components/ui/Card'
 import { FadeIn } from '@/components/ui/FadeIn'
-import { Building2, TrendingUp, Globe, Shield } from 'lucide-react'
+import { Users, Palmtree, Ship, Briefcase } from 'lucide-react'
 
 const useCases = [
   {
-    icon: Building2,
-    title: 'Enterprise Teams',
-    description: 'Scale your travel program across global offices with centralized control and local flexibility.',
-    benefits: ['Global policy enforcement', 'Multi-entity support', 'Duty of care'],
+    icon: Users,
+    title: 'Family Vacation Planners',
+    description: 'Save big on multi-room reservations and family-friendly resorts during school breaks.',
+    benefits: ['Multi-room savings', 'Kid-friendly properties', 'Flexible dates'],
   },
   {
-    icon: TrendingUp,
-    title: 'Growing Companies',
-    description: 'Build a scalable travel and expense program that grows with your business.',
-    benefits: ['Fast implementation', 'Flexible policies', 'Easy onboarding'],
+    icon: Palmtree,
+    title: 'Weekend Warriors',
+    description: 'Book last-minute resort deals with member-only rates for quick getaways.',
+    benefits: ['Last-minute deals', 'Fast booking', 'Instant confirmation'],
   },
   {
-    icon: Globe,
-    title: 'International Travel',
-    description: 'Book and manage travel across 90+ countries with 24/7 multilingual support.',
-    benefits: ['Global inventory', 'Local payment options', 'Duty of care'],
+    icon: Ship,
+    title: 'Cruise Enthusiasts',
+    description: 'Access bulk-purchased cabin inventory at wholesale pricing across major cruise lines.',
+    benefits: ['Wholesale pricing', 'Multiple cruise lines', 'Cabin upgrades'],
   },
   {
-    icon: Shield,
-    title: 'Compliance & Security',
-    description: 'Meet regulatory requirements with enterprise-grade security and compliance.',
-    benefits: ['SOC 2 Type II', 'GDPR compliant', 'Audit trails'],
+    icon: Briefcase,
+    title: 'Business Owners',
+    description: 'Get wholesale rates without corporate booking platforms for self-employed travel.',
+    benefits: ['No corporate account needed', 'Quick bookings', 'Tax receipts'],
   },
 ]
 
@@ -37,11 +37,10 @@ export function UseCases() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-              Built for every use case
+              Built for every kind of traveler
             </h2>
             <p className="text-body-lg text-text-secondary">
-              From startups to enterprises, Navan adapts to your unique travel
-              and expense needs.
+              From families to frequent travelers, Vayo Vault delivers savings that work for your travel style.
             </p>
           </div>
         </FadeIn>

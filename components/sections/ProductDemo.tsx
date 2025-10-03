@@ -5,55 +5,60 @@ import { Container } from '@/components/ui/Container'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { Button } from '@/components/ui/Button'
 import { Plane, Users, DollarSign, Briefcase } from 'lucide-react'
+import Image from 'next/image'
 
 const personas = [
   {
-    id: 'road-warriors',
-    title: 'Road Warriors',
+    id: 'couples',
+    title: 'Couples & Honeymooners',
     icon: Plane,
-    description: 'Book travel quickly, track expenses on the go, and stay connected with 24/7 support.',
+    description: 'Book romantic resorts and cruise packages at wholesale prices. Save big on your dream getaway.',
     features: [
-      'One-tap booking',
-      'Mobile expense capture',
-      'Real-time itinerary updates',
-      'Offline access',
+      'Adults-only resorts',
+      'Cruise cabin upgrades',
+      'Last-minute deals',
+      'Price match guarantee',
     ],
+    image: '/images/Resort.png',
   },
   {
-    id: 'travel-managers',
-    title: 'Travel Managers',
+    id: 'families',
+    title: 'Family Travelers',
     icon: Users,
-    description: 'Gain visibility into company travel, enforce policies, and optimize spend.',
+    description: 'Multi-room bookings, kid-friendly properties, and family packages at member-only rates.',
     features: [
-      'Policy compliance tracking',
-      'Approval workflows',
-      'Travel analytics',
-      'Supplier negotiations',
+      'Multi-room savings',
+      'All-inclusive resorts',
+      'Flexible dates',
+      'Kid-friendly properties',
     ],
+    image: '/images/Florida.png',
   },
   {
-    id: 'finance',
-    title: 'Finance & Accounting',
-    icon: DollarSign,
-    description: 'Automate expense reports, streamline reconciliation, and get real-time insights.',
-    features: [
-      'Automated reporting',
-      'ERP integrations',
-      'Spend analytics',
-      'Audit trail',
-    ],
-  },
-  {
-    id: 'assistants',
-    title: 'Executive Assistants',
+    id: 'business',
+    title: 'Business Owners',
     icon: Briefcase,
-    description: 'Book for others, manage complex itineraries, and handle last-minute changes.',
+    description: 'Get wholesale rates without corporate booking platforms. Perfect for self-employed travelers.',
     features: [
-      'Book on behalf of others',
-      'Multi-city itineraries',
-      'VIP preferences',
-      'Priority support',
+      'No corporate account needed',
+      'Quick bookings',
+      'Tax receipts',
+      'Flexible cancellation',
     ],
+    image: '/images/Hotel Room.png',
+  },
+  {
+    id: 'retirees',
+    title: 'Retirees',
+    icon: DollarSign,
+    description: 'Travel more often with savings that stretch your retirement budget. Book extended stays at reduced rates.',
+    features: [
+      'Extended stay discounts',
+      'Off-season deals',
+      'Cruise packages',
+      'Global destinations',
+    ],
+    image: '/images/Cruiseship.png',
   },
 ]
 
@@ -66,10 +71,10 @@ export function ProductDemo() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-              See Navan in action
+              Travel that fits your lifestyle
             </h2>
             <p className="text-body-lg text-text-secondary">
-              Explore how different teams use Navan to streamline their workflows
+              See how members save on hotels, resorts, cruises, and car rentals
             </p>
           </div>
         </FadeIn>
@@ -131,15 +136,24 @@ export function ProductDemo() {
           </FadeIn>
 
           {/* Right: Visual */}
-          <FadeIn delay={0.4}>
-            <div className="rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/10 aspect-[4/3] flex items-center justify-center shadow-xl">
-              <div className="text-center p-8">
-                <div className="w-20 h-20 rounded-2xl bg-white shadow-lg flex items-center justify-center mx-auto mb-4">
-                  <activePersona.icon className="w-10 h-10 text-primary" />
+          <FadeIn delay={0.4} key={`image-${activePersona.id}`}>
+            <div className="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+              <Image
+                src={activePersona.image}
+                alt={activePersona.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="flex items-center gap-3 text-white">
+                  <div className="w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <activePersona.icon className="w-6 h-6" />
+                  </div>
+                  <p className="text-[18px] leading-[26px] font-semibold">
+                    {activePersona.title}
+                  </p>
                 </div>
-                <p className="text-body-md text-text-secondary">
-                  {activePersona.title} Dashboard
-                </p>
               </div>
             </div>
           </FadeIn>

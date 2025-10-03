@@ -6,20 +6,20 @@ import Image from 'next/image'
 
 const features = [
   {
-    title: 'Intuitive Booking',
-    description: 'Book flights, hotels, and cars in one place with real-time pricing',
+    title: 'Start your free trial',
+    description: 'No credit card required. Set your travel preferences in under 10 minutes',
   },
   {
-    title: 'Smart Expense Tracking',
-    description: 'Automatic receipt capture and expense categorization',
+    title: 'Search members-only inventory',
+    description: 'Access wholesale rates and bulk-purchased deals not available to the public',
   },
   {
-    title: 'Corporate Cards',
-    description: 'Issue virtual and physical cards with built-in spend controls',
+    title: 'Book with instant confirmation',
+    description: 'Reserve hotels, resorts, cruises, and car rentals directly through the platform',
   },
   {
-    title: 'Real-Time Reporting',
-    description: 'Get instant insights into company-wide spending patterns',
+    title: 'Claim your price match',
+    description: 'Found a lower price? We\'ll match it. Guaranteed',
   },
 ]
 
@@ -30,27 +30,34 @@ export function PlatformOverview() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-              Experience the all-in-one travel and expense platform
+              How Vayo Vault works
             </h2>
             <p className="text-body-lg text-text-secondary">
-              Everything your team needs to book, manage, and track business
-              travel and expenses—all in one powerful platform.
+              From signup to savings, the whole process takes minutes.
             </p>
           </div>
         </FadeIn>
 
         {/* Main Feature Showcase */}
         <FadeIn delay={0.2}>
-          <div className="rounded-3xl bg-white border border-gray-200 shadow-xl overflow-hidden mb-12">
-            <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-              {/* Placeholder for product screenshot */}
-              <div className="text-center p-8">
-                <div className="w-24 h-24 rounded-2xl bg-white shadow-lg flex items-center justify-center mx-auto mb-4">
-                  <div className="text-4xl font-bold text-primary">N</div>
+          <div className="rounded-3xl overflow-hidden shadow-xl mb-12 relative">
+            <div className="aspect-[16/9] relative">
+              <Image
+                src="/images/Background-Car.png"
+                alt="Travel booking platform"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-primary-dark/40 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center p-8 text-white">
+                  <div className="w-24 h-24 rounded-2xl bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center mx-auto mb-4">
+                    <div className="text-4xl font-bold text-primary">VV</div>
+                  </div>
+                  <p className="text-[20px] leading-[28px] font-semibold">
+                    Member Dashboard Preview
+                  </p>
                 </div>
-                <p className="text-body-md text-text-secondary">
-                  Product Dashboard Preview
-                </p>
               </div>
             </div>
           </div>

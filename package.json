@@ -1,6 +1,7 @@
 {
-  "name": "navana-2",
+  "name": "vayo-travel-platform",
   "version": "1.0.0",
+  "description": "Vayo - Members-only travel deals platform",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -14,12 +15,20 @@
     "test": "playwright test",
     "test:visual": "playwright test tests/specs/visual-regression.spec.ts",
     "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "setup:unsplash": "bash scripts/setup-unsplash.sh",
+    "preview:blog-images": "npx tsx scripts/preview-blog-images.ts"
   },
-  "keywords": [],
+  "keywords": [
+    "travel",
+    "deals",
+    "membership",
+    "vacation",
+    "hotels",
+    "cruises"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@playwright/test": "^1.55.1",
     "@tailwindcss/typography": "^0.5.19",
@@ -36,6 +45,7 @@
     "sharp": "^0.34.4",
     "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.2"
   },
   "dependencies": {

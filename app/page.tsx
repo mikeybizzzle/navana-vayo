@@ -1,14 +1,17 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
+import { HowItWorks } from '@/components/sections/HowItWorks'
+import { HotDeals } from '@/components/sections/HotDeals'
+import { SavingsExamples } from '@/components/sections/SavingsExamples'
+import { LuxuryComparison } from '@/components/sections/LuxuryComparison'
+import { MembershipComparison } from '@/components/sections/MembershipComparison'
+import { CuratedCollections } from '@/components/sections/CuratedCollections'
+import { MemberReviews } from '@/components/sections/MemberReviews'
 import { LogoCloud } from '@/components/sections/LogoCloud'
-import { PlatformOverview } from '@/components/sections/PlatformOverview'
 import { Features } from '@/components/sections/Features'
-import { ProductDemo } from '@/components/sections/ProductDemo'
+import { FeaturedDestinations } from '@/components/sections/FeaturedDestinations'
 import { ValueProposition } from '@/components/sections/ValueProposition'
-import { SavingsStats } from '@/components/sections/SavingsStats'
-import { UseCases } from '@/components/sections/UseCases'
-import { VideoShowcase } from '@/components/sections/VideoShowcase'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { CTA } from '@/components/sections/CTA'
 
@@ -19,13 +22,16 @@ export default function Home() {
       <main className="min-h-screen">
         <Hero />
         <LogoCloud />
-        <PlatformOverview />
+        <HowItWorks />
+        <HotDeals />
+        <SavingsExamples />
+        <LuxuryComparison />
         <Features />
-        <ProductDemo />
+        <CuratedCollections />
+        <MembershipComparison />
+        <FeaturedDestinations />
+        <MemberReviews />
         <ValueProposition />
-        <SavingsStats />
-        <UseCases />
-        <VideoShowcase />
         <Testimonials />
         <CTA />
       </main>

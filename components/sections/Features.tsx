@@ -2,50 +2,50 @@ import { Container } from '@/components/ui/Container'
 import { Card } from '@/components/ui/Card'
 import { FadeIn } from '@/components/ui/FadeIn'
 import {
-  Plane,
-  CreditCard,
-  Receipt,
+  Hotel,
+  Ship,
+  Car,
   Smartphone,
-  BarChart3,
-  Shield,
+  BadgeCheck,
+  Lock,
 } from 'lucide-react'
 
 const features = [
   {
-    icon: Plane,
-    title: 'Corporate Travel',
+    icon: Hotel,
+    title: 'Hotels & Resorts',
     description:
-      'Book flights, hotels, and rental cars with ease. Get real-time updates and 24/7 support.',
+      'Unsold hotel rooms purchased in bulk at wholesale prices—passed directly to you with instant confirmation.',
   },
   {
-    icon: CreditCard,
-    title: 'Corporate Cards',
+    icon: Ship,
+    title: 'Cruise Deals',
     description:
-      'Issue smart cards with built-in controls. Automate expense tracking and reconciliation.',
+      'We buy unsold cruise cabins in bulk before they sail empty—you get the deep discounts.',
   },
   {
-    icon: Receipt,
-    title: 'Expense Management',
+    icon: Car,
+    title: 'Car Rentals',
     description:
-      'Capture receipts instantly, automate expense reports, and streamline approvals.',
+      'Rent vehicles at member-only rates with transparent pricing and no surprise fees.',
   },
   {
     icon: Smartphone,
-    title: 'Mobile First',
+    title: 'Mobile Access',
     description:
-      'Manage everything on the go with our award-winning mobile app.',
+      'Search, compare, and book on the go with our streamlined mobile experience.',
   },
   {
-    icon: BarChart3,
-    title: 'Advanced Analytics',
+    icon: BadgeCheck,
+    title: 'Price Match Guarantee',
     description:
-      'Get real-time insights into spending patterns and optimize your travel program.',
+      'Found a lower price elsewhere? We\'ll match it. No questions asked.',
   },
   {
-    icon: Shield,
-    title: 'Enterprise Security',
+    icon: Lock,
+    title: 'Members-Only Pricing',
     description:
-      'Bank-level security with SOC 2 Type II certification and GDPR compliance.',
+      'Behind-login access to wholesale rates and deals not advertised publicly.',
   },
 ]
 
@@ -57,11 +57,11 @@ export function Features() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-              Everything you need in one platform
+              Everything you need in one membership
             </h2>
             <p className="text-body-lg text-text-secondary">
-              From booking to reconciliation, Navan handles it all with
-              intelligence and ease.
+              From booking to savings, Vayo Vault handles it all with
+              transparency and ease.
             </p>
           </div>
         </FadeIn>

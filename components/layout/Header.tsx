@@ -9,10 +9,19 @@ import { cn } from '@/lib/utils'
 
 const navigation = [
   {
-    name: 'Solutions',
+    name: 'Products',
     items: [
-      { name: 'Business Travel', href: '/solutions/business-travel' },
-      { name: 'Expense Management', href: '/solutions/expense-management' },
+      { name: 'Hotels', href: '/hotels' },
+      { name: 'Resorts', href: '/resorts' },
+      { name: 'Cruises', href: '/cruises' },
+      { name: 'Car Rentals', href: '/cars' },
+    ],
+  },
+  {
+    name: 'How It Works',
+    items: [
+      { name: 'The Vault Access Model', href: '/how-it-works' },
+      { name: 'Price Match Guarantee', href: '/price-match' },
     ],
   },
   {
@@ -20,17 +29,24 @@ const navigation = [
     href: '/pricing',
   },
   {
-    name: 'Company',
+    name: 'About',
     items: [
-      { name: 'About Us', href: '/company/about' },
-      { name: 'Customer Stories', href: '/customers' },
+      { name: 'Our Story', href: '/company/about' },
+      { name: 'Member Reviews', href: '/customers' },
     ],
   },
   {
     name: 'Resources',
     items: [
-      { name: 'Blog & Insights', href: '/resources' },
-      { name: 'Contact Us', href: '/contact' },
+      { name: 'Travel Guides', href: '/resources/travel-guides' },
+      { name: 'Contact Support', href: '/contact' },
+    ],
+  },
+  {
+    name: 'Partners',
+    items: [
+      { name: 'Referral Program', href: '/referral' },
+      { name: 'Affiliate Program', href: '/affiliate' },
     ],
   },
 ]
@@ -45,7 +61,7 @@ export function Header() {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-primary">Navan</span>
+            <span className="text-2xl font-bold text-primary">Vayo Vault</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -98,10 +114,14 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="secondary" size="sm">
-              Sign In
-            </Button>
-            <Button size="sm">Get a Demo</Button>
+            <Link href="/login">
+              <Button variant="ghost" size="sm">
+                Member Login
+              </Button>
+            </Link>
+            <Link href="/checkout">
+              <Button size="sm">Start Free Trial</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -150,10 +170,14 @@ export function Header() {
               </div>
             ))}
             <div className="flex flex-col gap-3 mt-4">
-              <Button variant="secondary" size="md">
-                Sign In
-              </Button>
-              <Button size="md">Get a Demo</Button>
+              <Link href="/login">
+                <Button variant="secondary" size="md" className="w-full">
+                  Member Login
+                </Button>
+              </Link>
+              <Link href="/checkout">
+                <Button size="md" className="w-full">Start Free Trial</Button>
+              </Link>
             </div>
           </div>
         )}

@@ -134,7 +134,7 @@ test.describe('Visual Regression Tests', () => {
     await expect(header).toBeVisible();
 
     // Check logo
-    await expect(page.getByText('Navan').first()).toBeVisible();
+    await expect(page.getByText('Vayo').first()).toBeVisible();
 
     // Check CTA buttons
     await expect(page.getByRole('button', { name: /sign in/i })).toBeVisible();

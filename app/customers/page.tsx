@@ -17,98 +17,99 @@ import {
   Star,
   Quote,
 } from 'lucide-react'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Customer Stories | Navan',
-  description: 'See how companies around the world save time and money with Navan\'s travel and expense management platform.',
+  title: 'Member Reviews | Vayo Vault',
+  description: 'See how members save about 50% on hotels, resorts, cruises, and car rentals with Vayo Vault\'s wholesale pricing.',
 }
 
-const caseStudies = [
+const memberStories = [
   {
-    company: 'TechCorp Global',
-    industry: 'Technology',
-    size: '2,500 employees',
+    member: 'Jennifer M.',
+    location: 'San Diego, CA',
+    memberSince: 'March 2024',
     logo: Building2,
-    challenge: 'Manual expense reporting was taking 5+ hours per employee per month, leading to delayed reimbursements and frustrated teams.',
-    solution: 'Implemented Navan\'s automated expense management with receipt capture and real-time policy enforcement.',
+    challenge: 'Our family of four was paying $3,200 for a week at an all-inclusive Cancun resort. The same dates on public booking sites weren\'t getting any cheaper.',
+    solution: 'Found the same resort, same room category, same dates on Vayo Vault for $2,550. Saved $650 on one booking.',
     results: [
-      { metric: '85%', label: 'Time savings on expense reports' },
-      { metric: '$750K', label: 'Annual cost savings' },
-      { metric: '2 days', label: 'Faster reimbursements' },
+      { metric: '$650', label: 'Saved on one booking' },
+      { metric: '20%', label: 'Discount vs public rates' },
+      { metric: '1 booking', label: 'Paid for annual membership' },
     ],
     testimonial: {
-      quote: 'Navan has completely transformed how we manage expenses. What used to take hours now takes minutes, and our employees are much happier.',
-      author: 'Sarah Johnson',
-      role: 'CFO, TechCorp Global',
+      quote: 'We saved $650 on our Cancun resort. Same property, same dates, half the price. Vayo Vault paid for itself on day one.',
+      author: 'Jennifer M.',
+      role: 'Family Vacation, March 2024',
     },
   },
   {
-    company: 'Global Consulting Partners',
-    industry: 'Consulting',
-    size: '5,000 employees',
+    member: 'David K.',
+    location: 'Chicago, IL',
+    memberSince: 'January 2024',
     logo: Building2,
-    challenge: 'Consultants were wasting hours booking travel and struggled with out-of-policy bookings that required manual approval.',
-    solution: 'Deployed Navan\'s travel booking platform with custom policy controls and 24/7 support for global teams.',
+    challenge: 'I book 8-10 cruises per year for business and pleasure. Public cruise sites were charging full retail even for last-minute cabins.',
+    solution: 'Booked a 7-day Caribbean cruise through Vayo Vault\'s bulk-purchased inventory at 45% off the published rate.',
     results: [
-      { metric: '30%', label: 'Reduction in travel costs' },
-      { metric: '95%', label: 'Policy compliance rate' },
-      { metric: '60 sec', label: 'Average booking time' },
+      { metric: '45%', label: 'Saved vs public price' },
+      { metric: '$1,200', label: 'Discount on one cruise' },
+      { metric: '8+ cruises', label: 'Booked per year' },
     ],
     testimonial: {
-      quote: 'Our consultants can now book travel in seconds, and we have complete visibility into spending. The ROI was immediate.',
-      author: 'Michael Chen',
-      role: 'VP Operations, Global Consulting Partners',
+      quote: 'I travel constantly and Vayo Vault saves me thousands per year. The cruise inventory alone makes the membership worth it.',
+      author: 'David K.',
+      role: 'Cruise Enthusiast, January 2024',
     },
   },
   {
-    company: 'InnovateLabs',
-    industry: 'Biotech',
-    size: '800 employees',
+    member: 'Rachel P.',
+    location: 'Austin, TX',
+    memberSince: 'February 2024',
     logo: Building2,
-    challenge: 'Rapid growth meant scaling their travel and expense processes, but existing tools couldn\'t keep up.',
-    solution: 'Switched to Navan for unified travel booking, expense management, and corporate card program.',
+    challenge: 'As a freelance consultant, I travel 2-3 times per month but don\'t have access to corporate travel discounts.',
+    solution: 'Vayo Vault gave me wholesale hotel rates without needing a corporate account. No presentations, no contracts.',
     results: [
-      { metric: '50%', label: 'Faster month-end close' },
-      { metric: '99%', label: 'Receipt capture rate' },
-      { metric: '40 hrs', label: 'Saved per month for finance team' },
+      { metric: '$200+', label: 'Average savings per trip' },
+      { metric: '30+ trips', label: 'Booked in 12 months' },
+      { metric: '$6,000', label: 'Total annual savings' },
     ],
     testimonial: {
-      quote: 'As we scaled from 200 to 800 employees, Navan scaled with us effortlessly. It\'s the best investment we\'ve made in our finance stack.',
-      author: 'Emily Rodriguez',
-      role: 'Controller, InnovateLabs',
+      quote: 'I was paying retail rates as a solo business traveler. Vayo Vault gave me wholesale pricing without the corporate overhead. Game changer.',
+      author: 'Rachel P.',
+      role: 'Business Owner, February 2024',
     },
   },
 ]
 
-const industries = [
-  { name: 'Technology', count: '2,000+' },
-  { name: 'Professional Services', count: '1,500+' },
-  { name: 'Financial Services', count: '800+' },
-  { name: 'Healthcare', count: '600+' },
-  { name: 'Manufacturing', count: '500+' },
-  { name: 'Retail', count: '400+' },
+const destinations = [
+  { name: 'Caribbean Resorts', count: 'Hundreds of properties' },
+  { name: 'Mexico All-Inclusives', count: 'Deep discounts' },
+  { name: 'Hawaii Packages', count: 'Multi-island deals' },
+  { name: 'European Hotels', count: 'Wholesale rates' },
+  { name: 'Cruise Lines', count: 'All major lines' },
+  { name: 'Domestic Resorts', count: 'US & Canada' },
 ]
 
 const quickStats = [
   {
-    icon: Clock,
-    value: '5+ hours',
-    label: 'Saved per employee/month',
-  },
-  {
     icon: DollarSign,
-    value: '30%',
-    label: 'Average cost savings',
-  },
-  {
-    icon: Users,
-    value: '98%',
-    label: 'Customer satisfaction',
+    value: '50%',
+    label: 'Average savings',
   },
   {
     icon: TrendingUp,
-    value: '10M+',
-    label: 'Trips booked annually',
+    value: 'Thousands',
+    label: 'Active members',
+  },
+  {
+    icon: Users,
+    value: '4.8/5',
+    label: 'Member rating',
+  },
+  {
+    icon: Clock,
+    value: '24/7',
+    label: 'Support available',
   },
 ]
 
@@ -118,10 +119,20 @@ export default function CustomersPage() {
       <Header />
       <main>
         <PageHero
-          title="Trusted by thousands of companies worldwide"
-          description="See how organizations of all sizes use Navan to save time, reduce costs, and empower their teams."
-          primaryCTA={{ text: 'Get a Demo' }}
+          title="Real members, real savings"
+          description="See how Vayo Vault members save about 50% on hotels, resorts, cruises, and car rentals."
+          primaryCTA={{ text: 'Start Free Trial' }}
           background="default"
+          image={
+            <div className="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+              <Image
+                src="/images/Cruiseship.png"
+                alt="Cruise ship"
+                fill
+                className="object-cover"
+              />
+            </div>
+          }
         />
 
         {/* Quick Stats */}
@@ -149,39 +160,39 @@ export default function CustomersPage() {
             <FadeIn>
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-                  Customer Success Stories
+                  Member Success Stories
                 </h2>
                 <p className="text-body-lg text-text-secondary">
-                  Real results from real companies using Navan every day.
+                  Real savings from real members using Vayo Vault to travel more.
                 </p>
               </div>
             </FadeIn>
 
             <div className="space-y-16">
-              {caseStudies.map((study, index) => (
-                <FadeIn key={study.company} delay={index * 0.2}>
+              {memberStories.map((story, index) => (
+                <FadeIn key={story.member} delay={index * 0.2}>
                   <Card padding="none" className="overflow-hidden">
                     <div className="grid lg:grid-cols-5">
-                      {/* Left Column - Company Info */}
+                      {/* Left Column - Member Info */}
                       <div className="lg:col-span-2 p-8 lg:p-12 bg-primary/5">
                         <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                          <study.logo className="w-8 h-8 text-primary" />
+                          <story.logo className="w-8 h-8 text-primary" />
                         </div>
                         <h3 className="text-[28px] leading-[36px] font-display font-semibold text-primary-dark mb-2">
-                          {study.company}
+                          {story.member}
                         </h3>
                         <div className="flex flex-wrap gap-3 mb-6">
                           <span className="px-3 py-1 rounded-full bg-white text-body-sm text-text-secondary">
-                            {study.industry}
+                            {story.location}
                           </span>
                           <span className="px-3 py-1 rounded-full bg-white text-body-sm text-text-secondary">
-                            {study.size}
+                            Member since {story.memberSince}
                           </span>
                         </div>
 
                         {/* Results */}
                         <div className="space-y-4">
-                          {study.results.map((result) => (
+                          {story.results.map((result) => (
                             <div key={result.label}>
                               <div className="text-[32px] leading-[40px] font-display font-bold text-primary mb-1">
                                 {result.metric}
@@ -199,19 +210,19 @@ export default function CustomersPage() {
                         <div className="space-y-6">
                           <div>
                             <h4 className="text-[18px] leading-[26px] font-semibold text-primary mb-3">
-                              The Challenge
+                              Before Vayo Vault
                             </h4>
                             <p className="text-body-md text-text-secondary">
-                              {study.challenge}
+                              {story.challenge}
                             </p>
                           </div>
 
                           <div>
                             <h4 className="text-[18px] leading-[26px] font-semibold text-primary mb-3">
-                              The Solution
+                              With Vayo Vault
                             </h4>
                             <p className="text-body-md text-text-secondary">
-                              {study.solution}
+                              {story.solution}
                             </p>
                           </div>
 
@@ -219,7 +230,7 @@ export default function CustomersPage() {
                           <div className="pt-6 border-t border-gray-200">
                             <Quote className="w-8 h-8 text-primary/20 mb-4" />
                             <p className="text-[18px] leading-[28px] text-text-primary italic mb-4">
-                              "{study.testimonial.quote}"
+                              "{story.testimonial.quote}"
                             </p>
                             <div className="flex items-center gap-3">
                               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -227,10 +238,10 @@ export default function CustomersPage() {
                               </div>
                               <div>
                                 <div className="font-semibold text-primary-dark">
-                                  {study.testimonial.author}
+                                  {story.testimonial.author}
                                 </div>
                                 <div className="text-body-sm text-text-secondary">
-                                  {study.testimonial.role}
+                                  {story.testimonial.role}
                                 </div>
                               </div>
                             </div>
@@ -251,25 +262,25 @@ export default function CustomersPage() {
             <FadeIn>
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-                  Serving Every Industry
+                  Popular Destinations
                 </h2>
                 <p className="text-body-lg text-text-secondary">
-                  Companies across all sectors trust Navan for their travel and expense needs.
+                  Access wholesale pricing on hotels, resorts, and cruises worldwide.
                 </p>
               </div>
             </FadeIn>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {industries.map((industry, index) => (
-                <FadeIn key={industry.name} delay={index * 0.1}>
+              {destinations.map((destination, index) => (
+                <FadeIn key={destination.name} delay={index * 0.1}>
                   <Card padding="lg">
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="text-[20px] leading-[28px] font-semibold text-primary-dark mb-1">
-                          {industry.name}
+                          {destination.name}
                         </h3>
                         <p className="text-body-sm text-text-secondary">
-                          {industry.count} companies
+                          {destination.count}
                         </p>
                       </div>
                       <CheckCircle className="w-6 h-6 text-green-500" />

@@ -74,13 +74,15 @@ export function PricingCard({
         </div>
       </div>
 
-      <Button
-        variant={ctaVariant}
-        size="lg"
-        className="w-full"
-      >
-        {ctaText}
-      </Button>
+      <a href="/checkout">
+        <Button
+          variant={ctaVariant}
+          size="lg"
+          className="w-full"
+        >
+          {ctaText}
+        </Button>
+      </a>
     </Card>
   )
 }

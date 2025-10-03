@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Navan: The #1 Corporate Travel Management Platform',
-  description: 'Business travel & expense management. Solved. Experience the all-in-one travel and expense platform.',
+  title: 'Vayo Vault: Members-Only Travel Deals',
+  description: 'Vacation deals. Unlocked. Experience the members-only travel platform that delivers private wholesale pricing and saves you about 50% on average.',
 }
 
 export default function RootLayout({

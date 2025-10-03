@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
+import Image from 'next/image'
 
 interface PageHeroProps {
   badge?: string
@@ -21,6 +22,7 @@ interface PageHeroProps {
   }
   image?: ReactNode
   background?: 'default' | 'gradient' | 'purple'
+  backgroundImage?: string
 }
 
 export function PageHero({
@@ -31,6 +33,7 @@ export function PageHero({
   secondaryCTA,
   image,
   background = 'gradient',
+  backgroundImage,
 }: PageHeroProps) {
   const backgrounds = {
     default: 'bg-white',
@@ -39,11 +42,25 @@ export function PageHero({
   }
 
   return (
-    <section className={`relative pt-32 pb-20 md:pt-40 md:pb-32 ${backgrounds[background]} overflow-hidden`}>
-      <Container>
-        <div className={`grid lg:grid-cols-2 gap-12 items-center ${!image ? 'max-w-4xl mx-auto text-center' : ''}`}>
+    <section className={`relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden ${!backgroundImage ? backgrounds[background] : ''}`}>
+      {backgroundImage && (
+        <>
+          <div className="absolute inset-0">
+            <Image
+              src={backgroundImage}
+              alt="Background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/80 to-primary-dark/90" />
+        </>
+      )}
+      <Container className="relative z-10">
+        <div className={`grid lg:grid-cols-2 gap-12 items-center ${!image || backgroundImage ? 'max-w-4xl mx-auto text-center' : ''}`}>
           {/* Content */}
-          <div>
+          <div className={backgroundImage ? 'col-span-2' : ''}>
             {badge && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -62,7 +79,7 @@ export function PageHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className={`text-display-xl md:text-[60px] md:leading-[72px] font-display font-semibold mb-6 ${
-                background === 'purple' ? 'text-white' : 'text-primary-dark'
+                background === 'purple' || backgroundImage ? 'text-white' : 'text-primary-dark'
               }`}
             >
               {title}
@@ -73,7 +90,7 @@ export function PageHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className={`text-body-lg md:text-[24px] md:leading-[36px] mb-8 ${
-                background === 'purple' ? 'text-white/90' : 'text-text-secondary'
+                background === 'purple' || backgroundImage ? 'text-white/90' : 'text-text-secondary'
               }`}
             >
               {description}
@@ -84,13 +101,13 @@ export function PageHero({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-wrap gap-4"
+                className={`flex flex-wrap gap-4 ${backgroundImage ? 'justify-center' : ''}`}
               >
                 {primaryCTA && (
                   <Button
                     size="lg"
                     onClick={primaryCTA.onClick}
-                    className={background === 'purple' ? 'bg-white text-primary hover:bg-white/90' : ''}
+                    className={background === 'purple' || backgroundImage ? 'bg-white text-primary hover:bg-white/90 shadow-xl' : ''}
                   >
                     {primaryCTA.text}
                   </Button>
@@ -100,7 +117,7 @@ export function PageHero({
                     variant="secondary"
                     size="lg"
                     onClick={secondaryCTA.onClick}
-                    className={background === 'purple' ? 'border-white text-white hover:bg-white hover:text-primary' : ''}
+                    className={background === 'purple' || backgroundImage ? 'border-white text-white hover:bg-white hover:text-primary shadow-xl' : ''}
                   >
                     {secondaryCTA.text}
                   </Button>
@@ -110,7 +127,7 @@ export function PageHero({
           </div>
 
           {/* Image */}
-          {image && (
+          {image && !backgroundImage && (
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}

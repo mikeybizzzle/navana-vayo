@@ -1,26 +1,32 @@
 import { Container } from '@/components/ui/Container'
 import { Card } from '@/components/ui/Card'
 import { FadeIn } from '@/components/ui/FadeIn'
-import { TrendingDown, Clock, Users } from 'lucide-react'
+import { TrendingDown, Globe, DollarSign, UserCheck } from 'lucide-react'
 
 const stats = [
   {
     icon: TrendingDown,
-    value: '30%',
-    label: 'Average cost savings',
-    description: 'Companies save an average of 30% on travel and expense costs',
+    value: '50%',
+    label: 'Average savings',
+    description: 'Members save about 50% on average across hotels, resorts, cruises, and car rentals',
   },
   {
-    icon: Clock,
-    value: '5 hrs',
-    label: 'Time saved per employee per month',
-    description: 'Automate manual tasks and streamline workflows',
+    icon: Globe,
+    value: 'Global',
+    label: 'Coverage worldwide',
+    description: 'Access wholesale inventory across destinations in every region',
   },
   {
-    icon: Users,
-    value: '10K+',
-    label: 'Companies worldwide',
-    description: 'Join thousands of organizations that trust Navan',
+    icon: DollarSign,
+    value: '$37/mo',
+    label: 'Simple membership',
+    description: 'Cancel anytime. No contracts. 14-day free trial with no credit card required',
+  },
+  {
+    icon: UserCheck,
+    value: 'No',
+    label: 'Timeshares. No presentations.',
+    description: 'Unlike clubs charging $1,000s/month, we offer the same wholesale access for just $37',
   },
 ]
 
@@ -32,17 +38,19 @@ export function ValueProposition() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-lg md:text-display-xl font-display font-semibold mb-4">
-              Real impact on your bottom line
+              Real savings on every booking
             </h2>
-            <p className="text-body-lg text-text-tertiary">
-              See how Navan helps companies reduce costs, save time, and improve
-              employee satisfaction.
+            <p className="text-body-lg text-text-tertiary mb-6">
+              See how Vayo Vault helps travelers save money, book faster, and vacation better.
+            </p>
+            <p className="text-body-md text-white/80 italic">
+              Perfect for budget-savvy millennials, digital nomads, families, and retirees who want amazing vacations without paying retail prices.
             </p>
           </div>
         </FadeIn>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <FadeIn key={stat.label} delay={index * 0.15}>
               <Card

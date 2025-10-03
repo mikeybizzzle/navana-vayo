@@ -17,82 +17,78 @@ import {
   Shield,
   Sparkles,
 } from 'lucide-react'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About Us | Navan',
-  description: 'Learn about Navan\'s mission to simplify business travel and expense management for companies worldwide.',
+  title: 'About Us | Vayo Vault',
+  description: 'Learn about Vayo Vault\'s mission to provide travelers access to wholesale pricing and hidden resort deals without timeshare presentations.',
 }
 
 const stats = [
-  { value: '10M+', label: 'Trips booked annually' },
-  { value: '150+', label: 'Countries served' },
-  { value: '5000+', label: 'Companies trust us' },
-  { value: '98%', label: 'Customer satisfaction' },
+  { value: '50%', label: 'Average savings' },
+  { value: 'Global', label: 'Coverage worldwide' },
+  { value: 'Thousands', label: 'Members trust us' },
+  { value: '$37/mo', label: 'Simple pricing' },
 ]
 
 const values = [
   {
     icon: Target,
-    title: 'Mission-Driven',
-    description: 'We exist to make business travel and expense management effortless for every company.',
+    title: 'Transparency First',
+    description: 'We show you exactly how we get our deals and guarantee our pricing is legitimate.',
   },
   {
     icon: Users,
-    title: 'Customer First',
-    description: 'Every decision we make starts with understanding our customers\' needs and challenges.',
+    title: 'Member-Focused',
+    description: 'Every decision we make starts with understanding what travelers need and value.',
   },
   {
     icon: Zap,
-    title: 'Move Fast',
-    description: 'We ship quickly, iterate constantly, and aren\'t afraid to fail forward.',
+    title: 'No Pressure',
+    description: 'We\'ll never make you sit through a timeshare presentation or sign a long-term contract.',
   },
   {
     icon: Shield,
-    title: 'Trust & Transparency',
-    description: 'We build products and relationships based on honesty and reliability.',
+    title: 'Trust & Protection',
+    description: 'Our price match guarantee and clear terms build confidence in every booking.',
   },
   {
     icon: Heart,
     title: 'Care Deeply',
-    description: 'We genuinely care about our customers, teammates, and the impact we make.',
+    description: 'We genuinely care about helping members save money and vacation better.',
   },
   {
     icon: Sparkles,
     title: 'Excellence',
-    description: 'We pursue excellence in everything we do, from product to support.',
+    description: 'We pursue excellence in sourcing inventory, platform experience, and member support.',
   },
 ]
 
 const timeline = [
   {
-    year: '2015',
+    year: '2020',
     title: 'Company Founded',
-    description: 'Started with a vision to revolutionize business travel management.',
-  },
-  {
-    year: '2017',
-    title: '1M Trips Booked',
-    description: 'Reached our first major milestone with expanding customer base.',
-  },
-  {
-    year: '2019',
-    title: 'Expense Management Launch',
-    description: 'Expanded beyond travel to offer comprehensive expense solutions.',
+    description: 'Started with a vision to democratize access to wholesale travel pricing.',
   },
   {
     year: '2021',
-    title: 'Global Expansion',
-    description: 'Expanded operations to 150+ countries worldwide.',
+    title: 'First 1,000 Members',
+    description: 'Reached our first major milestone with growing member base.',
+  },
+  {
+    year: '2022',
+    title: 'Cruise Inventory Launch',
+    description: 'Expanded beyond resorts to offer deeply discounted cruise cabins.',
   },
   {
     year: '2023',
-    title: '5000+ Companies',
-    description: 'Now trusted by thousands of companies around the globe.',
+    title: 'Global Expansion',
+    description: 'Expanded coverage to destinations in 150+ countries.',
   },
   {
     year: '2024',
-    title: 'AI-Powered Features',
-    description: 'Launched advanced AI features for smarter booking and expense automation.',
+    title: 'Price Match Guarantee',
+    description: 'Launched industry-leading price protection for all members.',
   },
 ]
 
@@ -125,9 +121,19 @@ export default function AboutPage() {
       <Header />
       <main>
         <PageHero
-          title="Making business travel and expenses effortless"
-          description="We're on a mission to help companies of all sizes manage travel and expenses with ease, saving time and money while empowering employees."
+          title="Vacation deals without the pressure"
+          description="We're on a mission to help travelers access wholesale pricing and hidden resort deals without timeshare presentations or contracts."
           background="gradient"
+          image={
+            <div className="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+              <Image
+                src="/images/Family on Vacation.png"
+                alt="Family on vacation"
+                fill
+                className="object-cover"
+              />
+            </div>
+          }
         />
 
         {/* Stats Section */}
@@ -152,15 +158,10 @@ export default function AboutPage() {
                   Our Story
                 </h2>
                 <p className="text-body-lg text-text-secondary mb-6">
-                  Navan was born from a simple observation: business travel and expense
-                  management were stuck in the past. Companies were using multiple tools,
-                  employees were frustrated with slow reimbursements, and finance teams
-                  spent countless hours on manual processes.
+                  Vayo Vault was born from a simple observation: travelers were overpaying for hotels, resorts, and cruises because public booking sites couldn't show wholesale rates. Rate-parity rules and contracts prevent public platforms from displaying the private inventory that gets sold in bulk at deep discounts.
                 </p>
                 <p className="text-body-lg text-text-secondary">
-                  We knew there had to be a better way. So we built it. Today, Navan serves
-                  thousands of companies worldwide, processing millions of trips and expenses
-                  every year, all while making the experience delightful for everyone involved.
+                  We knew there had to be a better way. So we built it. By creating a members-only platform and purchasing unsold inventory in bulk, we unlock prices the public can't access. Today, Vayo Vault serves thousands of travelers worldwide, delivering about 50% savings on average—all without timeshare pitches or hidden fees.
                 </p>
               </div>
             </FadeIn>
@@ -237,7 +238,7 @@ export default function AboutPage() {
                   Leadership Team
                 </h2>
                 <p className="text-body-lg text-text-secondary">
-                  Meet the team leading Navan's mission to transform business travel and expenses.
+                  Meet the team leading Vayo Vault's mission to deliver wholesale travel pricing to members.
                 </p>
               </div>
             </FadeIn>
@@ -268,17 +269,16 @@ export default function AboutPage() {
               <Card variant="purple" padding="lg" className="text-center">
                 <Globe className="w-16 h-16 text-primary mx-auto mb-6" />
                 <h2 className="text-display-md font-display font-semibold text-primary-dark mb-4">
-                  Join Our Team
+                  Ready to See Member Rates?
                 </h2>
                 <p className="text-body-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                  We're always looking for talented people who share our passion for building
-                  great products and delivering exceptional customer experiences.
+                  Join thousands of travelers saving about 50% on hotels, resorts, cruises, and car rentals.
                 </p>
                 <a
-                  href="/careers"
+                  href="/pricing"
                   className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors"
                 >
-                  View Open Positions
+                  Start Free Trial
                 </a>
               </Card>
             </FadeIn>

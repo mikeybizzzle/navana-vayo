@@ -3,20 +3,34 @@ import { Container } from '@/components/ui/Container'
 import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
 
 const footerLinks = {
-  Products: ['Travel', 'Expense', 'Corporate Card', 'Payments', 'Mobile App'],
-  Solutions: [
-    'By Industry',
-    'By Company Size',
-    'Travel Managers',
-    'Finance Teams',
+  Deals: [
+    { name: 'Hotels & Resorts', href: '/hotels' },
+    { name: 'Cruises', href: '/cruises' },
+    { name: 'Car Rentals', href: '/cars' },
+    { name: 'Resorts', href: '/resorts' },
   ],
-  Resources: [
-    'Blog',
-    'Customer Stories',
-    'Help Center',
-    'Guides & Reports',
+  'For Members': [
+    { name: 'How It Works', href: '/how-it-works' },
+    { name: 'Price Match Guarantee', href: '/price-match' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Support Center', href: '/contact' },
   ],
-  Company: ['About Us', 'Careers', 'Press', 'Partners', 'Contact'],
+  Company: [
+    { name: 'About Vayo Vault', href: '/company/about' },
+    { name: 'Member Reviews', href: '/customers' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Contact', href: '/contact' },
+  ],
+  Partners: [
+    { name: 'Referral Program', href: '/referral' },
+    { name: 'Affiliate Program', href: '/affiliate' },
+  ],
+  Legal: [
+    { name: 'Terms of Service', href: '/legal/terms' },
+    { name: 'Privacy Policy', href: '/legal/privacy' },
+    { name: 'Refund Policy', href: '/legal/refund' },
+    { name: 'Price Match Terms', href: '/price-match' },
+  ],
 }
 
 const socialLinks = [
@@ -36,10 +50,10 @@ export function Footer() {
             {/* Logo Column */}
             <div className="col-span-2 md:col-span-4 lg:col-span-1">
               <Link href="/" className="inline-block mb-6">
-                <span className="text-2xl font-bold">Navan</span>
+                <span className="text-2xl font-bold">Vayo Vault</span>
               </Link>
               <p className="text-body-sm text-text-tertiary mb-6">
-                The all-in-one travel and expense platform
+                The members-only travel platform
               </p>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
@@ -61,12 +75,12 @@ export function Footer() {
                 <h3 className="font-semibold text-body-md mb-4">{category}</h3>
                 <ul className="space-y-3">
                   {links.map((link) => (
-                    <li key={link}>
+                    <li key={link.name}>
                       <Link
-                        href="#"
+                        href={link.href}
                         className="text-body-sm text-text-tertiary hover:text-white transition-colors"
                       >
-                        {link}
+                        {link.name}
                       </Link>
                     </li>
                   ))}
@@ -78,26 +92,26 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-body-sm text-text-tertiary">
-              © {new Date().getFullYear()} Navan. All rights reserved.
+              © {new Date().getFullYear()} Vayo Vault. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link
-                href="#"
+                href="/legal/privacy"
                 className="text-body-sm text-text-tertiary hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="#"
+                href="/legal/terms"
                 className="text-body-sm text-text-tertiary hover:text-white transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
-                href="#"
+                href="/legal/refund"
                 className="text-body-sm text-text-tertiary hover:text-white transition-colors"
               >
-                Cookie Settings
+                Refund Policy
               </Link>
             </div>
           </div>

@@ -18,54 +18,55 @@ import {
   Send,
   CheckCircle,
 } from 'lucide-react'
+import Image from 'next/image'
 
 const contactMethods = [
   {
     icon: Phone,
     title: 'Phone',
     details: '+1 (800) 123-4567',
-    description: 'Mon-Fri, 9am-6pm EST',
+    description: 'Mon-Sun, 8am-10pm EST',
   },
   {
     icon: Mail,
     title: 'Email',
-    details: 'hello@navan.com',
+    details: 'hello@vayovault.com',
     description: 'We\'ll respond within 24 hours',
   },
   {
     icon: MessageSquare,
     title: 'Live Chat',
-    details: 'Available now',
-    description: 'Chat with our support team',
+    details: 'Available 24/7',
+    description: 'Chat with our member support team',
   },
   {
     icon: MapPin,
     title: 'Headquarters',
-    details: 'San Francisco, CA',
-    description: '123 Market Street, Suite 400',
+    details: 'Miami, FL',
+    description: '456 Ocean Drive, Suite 200',
   },
 ]
 
-const offices = [
+const supportTopics = [
   {
-    city: 'San Francisco',
-    address: '123 Market Street, Suite 400',
-    region: 'North America HQ',
+    title: 'Membership & Billing',
+    description: 'Questions about your membership, billing, or cancellation',
+    icon: Phone,
   },
   {
-    city: 'New York',
-    address: '456 Broadway, Floor 12',
-    region: 'East Coast',
+    title: 'Booking Support',
+    description: 'Help with searching, booking, or modifying your reservations',
+    icon: MessageSquare,
   },
   {
-    city: 'London',
-    address: '789 Oxford Street',
-    region: 'Europe HQ',
+    title: 'Price Match',
+    description: 'Submit a price match request or check claim status',
+    icon: Mail,
   },
   {
-    city: 'Singapore',
-    address: '321 Orchard Road',
-    region: 'Asia Pacific HQ',
+    title: 'Technical Help',
+    description: 'Website issues, login problems, or account access',
+    icon: MapPin,
   },
 ]
 
@@ -101,6 +102,16 @@ export default function ContactPage() {
           title="Get in touch"
           description="Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
           background="default"
+          image={
+            <div className="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+              <Image
+                src="/images/Background-Condo.png"
+                alt="Vacation property"
+                fill
+                className="object-cover"
+              />
+            </div>
+          }
         />
 
         {/* Contact Methods */}
@@ -173,28 +184,13 @@ export default function ContactPage() {
 
                     <div>
                       <label htmlFor="email" className="block text-body-sm font-medium text-text-primary mb-2">
-                        Work Email *
+                        Email *
                       </label>
                       <input
                         type="email"
                         id="email"
                         name="email"
                         value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-primary focus:outline-none transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="company" className="block text-body-sm font-medium text-text-primary mb-2">
-                        Company *
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-primary focus:outline-none transition-colors"
@@ -217,7 +213,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="companySize" className="block text-body-sm font-medium text-text-primary mb-2">
-                          Company Size
+                          Topic
                         </label>
                         <select
                           id="companySize"
@@ -226,12 +222,12 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-primary focus:outline-none transition-colors"
                         >
-                          <option value="">Select size</option>
-                          <option value="1-50">1-50 employees</option>
-                          <option value="51-200">51-200 employees</option>
-                          <option value="201-500">201-500 employees</option>
-                          <option value="501-1000">501-1000 employees</option>
-                          <option value="1000+">1000+ employees</option>
+                          <option value="">Select topic</option>
+                          <option value="membership">Membership & Billing</option>
+                          <option value="booking">Booking Support</option>
+                          <option value="price-match">Price Match Request</option>
+                          <option value="technical">Technical Help</option>
+                          <option value="other">Other</option>
                         </select>
                       </div>
                     </div>
@@ -248,7 +244,7 @@ export default function ContactPage() {
                         required
                         rows={5}
                         className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-primary focus:outline-none transition-colors resize-none"
-                        placeholder="Tell us about your needs..."
+                        placeholder="How can we help you?"
                       />
                     </div>
 
@@ -276,10 +272,10 @@ export default function ContactPage() {
                         <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                         <div>
                           <div className="font-semibold text-primary-dark mb-1">
-                            24/7 Support
+                            24/7 Member Support
                           </div>
                           <p className="text-body-sm text-text-secondary">
-                            For existing customers, our support team is available around the clock
+                            Our member support team is available around the clock to help with bookings and questions
                           </p>
                         </div>
                       </div>
@@ -317,7 +313,7 @@ export default function ContactPage() {
                           <CheckCircle className="w-4 h-4 text-primary" />
                         </div>
                         <p className="text-body-sm text-text-secondary">
-                          Personalized demo available
+                          Free trial information provided
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
@@ -325,7 +321,7 @@ export default function ContactPage() {
                           <CheckCircle className="w-4 h-4 text-primary" />
                         </div>
                         <p className="text-body-sm text-text-secondary">
-                          Custom pricing proposal
+                          Simple $37/mo membership pricing
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
@@ -344,33 +340,30 @@ export default function ContactPage() {
           </Container>
         </section>
 
-        {/* Office Locations */}
+        {/* Support Topics */}
         <section className="py-20 md:py-32">
           <Container>
             <FadeIn>
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-display-lg md:text-display-xl font-display font-semibold text-primary-dark mb-4">
-                  Our Offices
+                  Common Support Topics
                 </h2>
                 <p className="text-body-lg text-text-secondary">
-                  Visit us at one of our locations around the world.
+                  Find quick answers to common questions or contact us directly.
                 </p>
               </div>
             </FadeIn>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {offices.map((office, index) => (
-                <FadeIn key={office.city} delay={index * 0.1}>
-                  <Card padding="lg">
-                    <MapPin className="w-6 h-6 text-primary mb-3" />
-                    <h3 className="text-[20px] leading-[28px] font-semibold text-primary-dark mb-1">
-                      {office.city}
+              {supportTopics.map((topic, index) => (
+                <FadeIn key={topic.title} delay={index * 0.1}>
+                  <Card padding="lg" className="h-full">
+                    <topic.icon className="w-6 h-6 text-primary mb-3" />
+                    <h3 className="text-[18px] leading-[26px] font-semibold text-primary-dark mb-2">
+                      {topic.title}
                     </h3>
-                    <p className="text-body-sm text-primary font-medium mb-2">
-                      {office.region}
-                    </p>
                     <p className="text-body-sm text-text-secondary">
-                      {office.address}
+                      {topic.description}
                     </p>
                   </Card>
                 </FadeIn>
