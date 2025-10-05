@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { Copy, Mail, MessageCircle, Share2, Check } from 'lucide-react'
@@ -12,6 +12,11 @@ interface ShareToolsProps {
 
 export function ShareTools({ referralCode, referralLink }: ShareToolsProps) {
   const [copied, setCopied] = useState(false)
+  const [canShare, setCanShare] = useState(false)
+
+  useEffect(() => {
+    setCanShare(typeof navigator !== 'undefined' && typeof navigator.share === 'function')
+  }, [])
 
   const copyToClipboard = async (text: string) => {
     await navigator.clipboard.writeText(text)
@@ -105,7 +110,7 @@ export function ShareTools({ referralCode, referralLink }: ShareToolsProps) {
             <MessageCircle className="w-5 h-5" />
             SMS
           </Button>
-          {navigator.share && (
+          {canShare && (
             <Button variant="secondary" onClick={shareViaWeb} className="gap-2 col-span-2">
               <Share2 className="w-5 h-5" />
               Share

@@ -62,7 +62,7 @@ const blogMeta: Record<string, { title: string; category: string; readTime: stri
 function MarkdownContent({ content }: { content: string }) {
   // Simple markdown to JSX conversion
   const lines = content.split('\n')
-  const elements: JSX.Element[] = []
+  const elements: React.ReactElement[] = []
   let currentElement: string[] = []
   let elementType = 'p'
   let inTable = false
@@ -251,15 +251,16 @@ function MarkdownContent({ content }: { content: string }) {
   return <div>{elements}</div>
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const meta = blogMeta[params.slug]
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const meta = blogMeta[slug]
 
   if (!meta) {
     return <div>Blog not found</div>
   }
 
   // Get image configuration for this blog post
-  const imageConfig = getBlogImageConfig(params.slug)
+  const imageConfig = getBlogImageConfig(slug)
 
   // Fetch hero image from Unsplash
   let heroImage = null
@@ -278,7 +279,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   // Read markdown file
-  const filePath = join(process.cwd(), 'blog-content', `${params.slug.split('-').map((w, i) => i === 0 ? (params.slug.match(/^\d/) ? w : w) : w).join('-')}.md`)
+  const filePath = join(process.cwd(), 'blog-content', `${slug.split('-').map((w, i) => i === 0 ? (slug.match(/^\d/) ? w : w) : w).join('-')}.md`)
 
   let content = ''
   try {
@@ -296,7 +297,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       'all-inclusive-math': '10-all-inclusive-math.md',
     }
 
-    const fileName = fileMap[params.slug]
+    const fileName = fileMap[slug]
     const fullPath = join(process.cwd(), 'blog-content', fileName)
     content = readFileSync(fullPath, 'utf-8')
   } catch (error) {
